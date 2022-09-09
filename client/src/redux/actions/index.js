@@ -203,7 +203,7 @@ export function removeItemFromCart(payload) {
 //obtener todos los usuarios de la db
 export function getAllUsers() {
   return async function (dispatch) {
-    const json = await axios.get("http://localhost:3001/api/users");
+    const json = await axios.get("/api/users");
     return dispatch({
       type: GET_ALL_USERS,
       payload: json.data.results,
@@ -346,7 +346,7 @@ export function updateOrder(payload) {
 export function getUsersByEmail(emailUser) {
   return async function (dispatch) {
     try {
-      const { data } = await axios.get("http://localhost:3001/api/users");
+      const { data } = await axios.get("/api/users");
       const usuarioFiltrado = data.results.filter(
         (el) => el.email === emailUser
       );
@@ -393,7 +393,7 @@ export function updateUser(payload) {
       payload
     );
     const json = await axios.put(
-      "http://localhost:3001/api/users/editarUser",
+      "/api/users/editarUser",
       payload
     );
     return {
