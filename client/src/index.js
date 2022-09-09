@@ -10,7 +10,7 @@ import { Auth0Provider } from "@auth0/auth0-react";
 
 // require("dotenv").config();
 
-axios.defaults.baseURL = process.env.REACT_APP_API || "http://localhost:3001";
+axios.defaults.baseURL = process.env.REACT_APP_API || "https://back-finalproject.herokuapp.com";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
